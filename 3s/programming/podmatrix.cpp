@@ -8,8 +8,8 @@ int main() {
   
   int n,m;
   int a[1000][1000]; 
-  int x0,y0,x1,y1;
-  double M;
+  int x0=-1,y0=-1,x1=-1,y1=-1;
+  double M=0;
   
   cin >> n >> m;
   for (int i = 0; i < n; ++i)
@@ -21,27 +21,32 @@ int main() {
     int t = 0;
     for (int j = 0 ; j < m; ++j) {
       for (int k = j; k < m; ++k) {
+        t = 0;
         do {
           t += a[i][k];
-        } while ((++k < m) && (t > 0));
-        int w = 0;
-        for (int l = j; j < k; ++l) {
-          for (int u = i; u < n; ++u) {
-            w +=a[u][l];
+          ++k;
+        } while ((k < m) && (t > 0));
+        
+        int w = 0;        
+        for (int q = j; q < k; ++q) {
+          for (int u = i; u < n; ++u) {            
+            for (int l = j; l <=q; ++l) 
+              w +=a[u][l];                   
             if (w > M) {
-              omp_set_lock(&lockM);
-              if (w > M){
-                M = w;
-                y0 = i;
-                x0 = j;
-                y1 = u;
-                x1 = l;
-                //
-              }
-              omp_unset_lock(&lockM);
-            }                    
+                omp_set_lock(&lockM);
+                if (w > M){
+                  M = w;
+                  y0 = i;
+                  x0 = j;
+                  y1 = u;
+                  x1 = q;
+                  //cout << "chang " << M << ':' << x0 <<"."<< y0 << ' ' << x1 << '.' << y1 << endl
+                }
+                omp_unset_lock(&lockM);
+              } 
+            if (w <= 0) { w = 0; break; }
           }
-          if (w <= 0) break;
+          w = 0;
         }
         t = 0;
         --k;
@@ -50,7 +55,7 @@ int main() {
     }
   }
   
-  cout << "x,y:\n" << x0 <<", "<< y0 << endl << x1 <<", "<< y1 << "\nMatrix:\n";
+  cout << "y(n), x(m):\nbegin: " << y0 <<", "<< x0 << "\nend:   " << y1 <<", "<< x1 << "\nMatrix:\n";
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j < m; ++j)
       cout << a[i][j] << ' ';
