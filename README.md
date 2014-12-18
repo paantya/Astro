@@ -1,8 +1,3 @@
-### podmatrix.cpp ###
-
-**Build:**
-
-    g++ podmatrix.cpp -fopenmp -o podmatrix
-**Work:**
-
-    ./podmatrix < podmatrix.in
+Astro
+=====
+[Программирование](https://github.com/paantya/Astro/tree/master/3s/programming "Программирование my .cpp")
