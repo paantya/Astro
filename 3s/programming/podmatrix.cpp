@@ -1,27 +1,29 @@
 #include <iostream>
 #include <omp.h> 
 using namespace std;
+#include <limits>
+
 
 int main() {
   omp_lock_t lockM;
   omp_init_lock(&lockM);
+  long lmin = numeric_limits<long>::min();
   
   int n,m;
-  int a[1000][1000]; 
   int x0=-1,y0=-1,x1=-1,y1=-1;
-  double M=0;
-  
+  long M = lmin;
   cin >> n >> m;
+  int a[n][m]; 
   for (int i = 0; i < n; ++i)
     for (int j = 0; j < m; ++j)
       cin >> a[i][j];
   
   #pragma omp parallel for
   for (int i = 0; i < n; ++i) {
-    int t = 0;
+    long t;
     for (int j = 0 ; j < m; ++j) {
       for (int k = j; k < m; ++k) {
-        t = 0;
+        t = lmin;
         do {
           t += a[i][k];
           ++k;
@@ -39,7 +41,7 @@ int main() {
                   x0 = j;
                   y1 = u;
                   x1 = q;
-                  //cout << "chang " << M << ':' << x0 <<"."<< y0 << ' ' << x1 << '.' << y1 << endl
+                  //cout << "chang " << M << ':' << x0 <<"."<< y0 << ' ' << x1 << '.' << y1 << endl;
                 }
                 omp_unset_lock(&lockM);
               } 
