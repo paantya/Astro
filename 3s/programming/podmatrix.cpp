@@ -28,7 +28,7 @@ int main() {
           t += a[i][k];
           ++k;
         } while ((k < m) && (t > 0));        
-        int w = 0;        
+        long w = lmin;        
         for (int q = j; q < k; ++q) {
           for (int u = i; u < n; ++u) {            
             for (int l = j; l <=q; ++l) 
