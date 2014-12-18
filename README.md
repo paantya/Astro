@@ -1,7 +1,7 @@
 ### podmatrix.cpp ###
-**Build:**  
+**Build:**
 
     g++ podmatrix.cpp -fopenmp -o podmatrix
-**Work:**  
+**Work:**
 
     ./podmatrix < podmatrix.in
