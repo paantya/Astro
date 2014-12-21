@@ -9,6 +9,7 @@
 ##### <a name="podmatrix_cpp"></a> Алгоритм поиска координат наибольшей по сумме подматрицы используя OpenMP:
 
  + Code: [podmatrix.cpp](https://github.com/paantya/Astro/blob/master/3s/programming/podmatrix.cpp "Open podmatrix.cpp")   
+ + Input file: [podmatrix.in](https://github.com/paantya/Astro/blob/master/3s/programming/podmatrix.in "Open input file")
  + Build: `g++ podmatrix.cpp -fopenmp -o podmatrix`  
  + Start: `./podmatrix <  podmatrix.in`
 
