@@ -28,27 +28,27 @@ struct record *mpointer;
 int main()
  {
   for (i=0;i<NN;i++)
-   hash[i] = NULL; // Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÐ¼ Ñ…ÐµÑˆ
+   hash[i] = NULL; // éÎÉÃÉÁÌÉÚÉÒÕÅÍ ÈÅÛ
   for (i=0;i<N;i++)
    {
-     pointer= (record*) malloc(sizeof(struct record )); // Ð’Ñ‹Ð´ÐµÐ»ÑÐµÐ¼ Ð¾Ð±Ð»Ð°ÑÑ‚ÑŒ Ð¿Ð°Ð¼ÑÑ‚Ð¸ Ð¿Ð¾Ð´ Ð·Ð°Ð¿Ð¸ÑÑŒ Ñ‚Ð¸Ð¿Ð° record
-/* Ð—Ð°Ð½Ð¾ÑÐ¸Ð¼ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð² ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ðµ Ð¿Ð¾Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸ */
+     pointer= (record*) malloc(sizeof(struct record )); // ÷ÙÄÅÌÑÅÍ ÏÂÌÁÓÔØ ÐÁÍÑÔÉ ÐÏÄ ÚÁÐÉÓØ ÔÉÐÁ record
+/* úÁÎÏÓÉÍ ÉÎÆÏÒÍÁÃÉÀ × ÓÏÏÔ×ÅÔÓÔ×ÕÀÝÉÅ ÐÏÌÑ ÚÁÐÉÓÉ */
      (*pointer).next = NULL;
      scanf ("%s %s", &((*pointer).key_fio), &((*pointer).val_tel));
 /* ************** */
-     j = keyfunc((*pointer).key_fio); // ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ñ…ÑÑˆ-Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¸ (Ñ…ÑÑˆ-ÐºÐ»ÑŽÑ‡)
+     j = keyfunc((*pointer).key_fio); // ðÏÌÕÞÁÅÍ ÚÎÁÞÅÎÉÑ ÈÜÛ-æÕÎËÃÉÉ (ÈÜÛ-ËÌÀÞ)
 
-/* Ð—Ð°Ð½Ð¾ÑÐ¸Ð¼ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð½Ð¾Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² Ñ…ÑÑˆ (Ñ…ÑÑˆ-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ) */
+/* úÁÎÏÓÉÍ ÏÞÅÒÅÄÎÏÊ ÜÌÅÍÅÎÔ × ÈÜÛ (ÈÜÛ-ÔÁÂÌÉÃÕ) */
      if (hash[j] == NULL) 
-      // Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ Ñ…ÑÑˆ-ÐºÐ»ÑŽÑ‡ Ñ€Ð°Ð²Ð½Ñ‹Ð¼ j Ð½ÐµÑ‚ 
-      hash[j] = pointer; // Ð—Ð°Ð½Ð¾ÑÐ¸Ð¼ Ð² hash[j] ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ (Ð°Ð´Ñ€ÐµÑ Ð¿Ð°Ð¼ÑÑ‚Ð¸) Ð½Ð° Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ
+      // üÌÅÍÅÎÔÁ Ó ÈÜÛ-ËÌÀÞ ÒÁ×ÎÙÍ j ÎÅÔ 
+      hash[j] = pointer; // úÁÎÏÓÉÍ × hash[j] ÕËÁÚÁÔÅÌØ (ÁÄÒÅÓ ÐÁÍÑÔÉ) ÎÁ ××ÅÄÅÎÎÙÅ ÄÁÎÎÙÅ
      else
-      // Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ Ñ…ÑÑˆ-ÐºÐ»ÑŽÑ‡ Ñ€Ð°Ð²Ð½Ñ‹Ð¼ j ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚, Ñ‚Ð¾Ð³Ð´Ð° Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·ÑƒÐµÐ¼ ÑÐ¿Ð¸ÑÐ¾Ðº
+      // üÌÅÍÅÎÔÁ Ó ÈÜÛ-ËÌÀÞ ÒÁ×ÎÙÍ j ÓÕÝÅÓÔ×ÕÅÔ, ÔÏÇÄÁ ÏÒÇÁÎÉÚÕÅÍ ÓÐÉÓÏË
       { mpointer = hash[j];
 	while ((*mpointer).next != NULL) {mpointer = (*mpointer).next;}
 	(*mpointer).next = pointer; }
       }
-   PrHash(); // Ð’Ñ‹Ð·Ñ‹Ð²Ð°ÐµÐ¼ Ð¿ÐµÑ‡Ð°Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐºÐ°
+   PrHash(); // ÷ÙÚÙ×ÁÅÍ ÐÅÞÁÔØ ÓÐÉÓËÁ
  }
 
 
@@ -80,9 +80,9 @@ int keyfunc(char s[])
 }
 
 /*--- ElfHash --------------------------------------------------- *
-  ÐžÐ¿ÑƒÐ±Ð»Ð¸ÐºÐ¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð°Ð»Ð³Ð¾Ñ€Ð¸Ñ‚Ð¼ Ñ…ÑÑˆÐ° Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ ELF Ð´Ð»Ñ
-  ÐžÐ±ÑŠÐµÐºÑ‚Ð½Ñ‹Ñ… Ñ„Ð°Ð¹Ð»Ð¾Ð² UNIX. ÐŸÑ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÑƒ Ñ‚ÐµÐºÑÑ‚Ð°,
-  Ð¥ÑÑˆÐ¸Ñ€ÑƒÐµÑ‚ ÐµÐµ Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ unsigned long.
+  ïÐÕÂÌÉËÏ×ÁÎÎÙÊ ÁÌÇÏÒÉÔÍ ÈÜÛÁ ÉÓÐÏÌØÚÏ×ÁÎÎÙÊ × ÆÏÒÍÁÔÅ ELF ÄÌÑ
+  ïÂßÅËÔÎÙÈ ÆÁÊÌÏ× UNIX. ðÒÉÎÉÍÁÅÔ ÕËÁÚÁÔÅÌØ ÎÁ ÓÔÒÏËÕ ÔÅËÓÔÁ,
+  èÜÛÉÒÕÅÔ ÅÅ É ×ÏÚ×ÒÁÝÁÅÔ unsigned long.
 -----------------------------------------------------------------*/
 unsigned long ElfHash(const unsigned char *str_in)
 {
@@ -97,4 +97,29 @@ unsigned long ElfHash(const unsigned char *str_in)
 
    return x;
 }
+
+char* ChoiceHash(char fio[]) {
+  j = keyfunc(fio);
+  mpointer = hash[j];
+  while (mpointer->key_fio != fio && mpointer != NULL) mpointer = mpointer->next;
+  if (mpointer == NULL) 
+    return NULL;
+  else
+    return mpointer->val_tel;
+}
+
+int DelElem(char fio[]) {
+  j = keyfunc(fio);
+  mpointer = hash[j];
+  while (mpointer->key_fio != fio && mpointer != NULL) mpointer = mpointer->next;
+  if (mpointer == NULL) 
+    return 0;
+  else {
+    pointer = mpointer;
+    mpointer = mpointer->next;
+    free(pointer);
+    return 1;
+  }
+}
+
 
