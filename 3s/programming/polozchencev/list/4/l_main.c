@@ -21,6 +21,7 @@ main()
  Top=PushStek(Top, intWork);
 
  PrintList(Top);
+ printf("\n");
  PrintRecur(Top);
 
  intWork=PopStek(Top);

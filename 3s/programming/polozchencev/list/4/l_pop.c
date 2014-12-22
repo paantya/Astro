@@ -26,7 +26,8 @@ int PopStek (struct ElemList *Top) /* Программа удалени элемента */
   else {
     intDelKey = Top->intKey;
     Elem_Work = Top;
-    free(Top);
+    Top = Elem_Work->next;
+    free(Elem_Work);
     return intDelKey;
   }
 
