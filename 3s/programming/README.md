@@ -16,11 +16,11 @@
 
 ##### <a name="tree.c"></a> Задание "tree":
  + Task: [task](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/tree "Задание")
- + Code: [list.exe](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/tree/PROGRAM "Open code tree")  
+ + Code: [tree.exe](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/tree/PROGRAM "Open code tree")  
  
 ##### <a name="hash.c"></a> Задание "hash":
  + Task: [task](https://github.com/paantya/Astro/blob/master/3s/programming/polozchencev/hash "Задание")
- + Code: [list.exe](https://github.com/paantya/Astro/blob/master/3s/programming/polozchencev/hash/hash_q.cpp "Open code hash")  
+ + Code: [hash.exe](https://github.com/paantya/Astro/blob/master/3s/programming/polozchencev/hash/hash_q.cpp "Open code hash")  
 
 ***
 ##### <a name="podmatrix_cpp"></a> Алгоритм поиска координат наибольшей по сумме подматрицы используя OpenMP:
