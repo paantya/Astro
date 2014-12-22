@@ -12,6 +12,7 @@
 ##### <a name="list.c"></a> Задание "list":
  + Task: [task](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/list "Задание")
  + Code: [list.exe](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/list/4 "Open code list")  
+
 ##### <a name="tree.c"></a> Задание "tree":
  + Task: [task](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/tree "Задание")
  + Code: [list.exe](https://github.com/paantya/Astro/tree/master/3s/programming/polozchencev/tree/PROGRAM "Open code tree")  
